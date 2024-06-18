@@ -438,7 +438,7 @@ a {
 
 @media only screen and (max-width: 600px){
   .center__video {
-    margin-left: -12%;
+    margin-left: 0px;
   }
   .reduce__margin__bt {
     margin-bottom: -240px;
@@ -1213,7 +1213,7 @@ frame
 }
 @media screen and (max-width: 992px) {
   .mil-logo {
-    font-size: 36px;
+    font-size: 1  6px;
   }
 }
 
@@ -4261,10 +4261,11 @@ html.is-animating .mil-menu-frame {
 {
   .postion__auto__video
   {
+    max-width: 100%;
     width: 500px;
-    margin-right: 24px;
-    margin-left: 0px;
-    margin: -112px 4px;
+    margin-right: 0px;
+    margin-left: 15px;
+    /* margin: -112px 4px; */
   }
 }
 
