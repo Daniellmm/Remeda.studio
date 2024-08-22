@@ -54,12 +54,12 @@ body.compensate-for-scrollbar {
     opacity: 0;
     transition-duration: inherit;
     transition-property: opacity;
-    transition-timing-function: cubic-bezier(.47, 0, .74, .71)
+    /* transition-timing-function: cubic-bezier(.47, 0, .74, .71) */
 }
 
 .fancybox-is-open .fancybox-bg {
     opacity: 1;
-    transition-timing-function: cubic-bezier(.22, .61, .36, 1)
+    /* transition-timing-function: cubic-bezier(.22, .61, .36, 1) */
 }
 
 .fancybox-caption,
