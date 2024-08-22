@@ -21,7 +21,7 @@ app.post('/send-email', async (req, res) => {
         const sentEmail = await emailSender({ username, email, story });
         res.status(200).send(sentEmail);
     } catch(err){
-        res.status(400).send("An error occured");
+        res.status(400).send("An error occured"); 
     }
 })
 
