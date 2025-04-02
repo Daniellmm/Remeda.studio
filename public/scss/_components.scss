@@ -10,13 +10,13 @@ preloader
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: $dark;
+     background-color: $dark;
 
     & .mil-preloader-animation {
         opacity: 0;
         position: relative;
         height: 100vh;
-        color: $light;
+         color: $light;
 
         & .mil-pos-abs {
             position: absolute;
@@ -85,7 +85,7 @@ cursor
         transform: scale(0);
 
         & svg {
-            fill: $lt-90;
+            // fill: $lt-90;
         }
     }
 
@@ -175,10 +175,15 @@ frame
     font-size: 42px;
     font-weight: 500;
     line-height: 100%;
+    mix-blend-mode: difference;
 
     @media screen and (max-width: 992px) {
         font-size: 36px;
+        mix-blend-mode: difference;
+
+
     }
+
 }
 
 .mil-frame {
@@ -212,6 +217,13 @@ frame
 
             & .mil-logo {
                 color: $light;
+                mix-blend-mode: difference;
+            }
+
+            & .logo-image {
+                color: rgb(71, 169, 230);
+                // color: rgb(255, 152, 0);
+                mix-blend-mode: difference;
             }
 
             & .mil-menu-btn {
@@ -263,6 +275,13 @@ frame
     & .mil-logo {
         pointer-events: all;
         color: $dark;
+        mix-blend-mode: difference;
+    }
+
+    & .logo-image {
+        color: rgb(71, 169, 230);
+        // color: rgb(255, 152, 0);
+        mix-blend-mode: difference;
     }
 }
 
@@ -364,7 +383,14 @@ menu
 
         & .mil-logo {
             color: $light;
+            mix-blend-mode: difference;
         }
+
+                 & .logo-image {
+                     color: rgb(71, 169, 230);
+                    //  color: rgb(255, 152, 0);
+                     mix-blend-mode: difference;
+                 }
 
         & .mil-menu-btn {
 
@@ -543,7 +569,7 @@ menu
             }
 
             &.mil-active {
-                & > a {
+                &>a {
                     color: $accent;
 
                     &:hover {
@@ -554,7 +580,7 @@ menu
             }
 
             &.mil-has-children {
-                & > a {
+                &>a {
                     &:hover {
                         color: $light;
                         padding-left: 25px;
@@ -2472,7 +2498,7 @@ images
     position: relative;
     overflow: hidden;
 
-    & > img {
+    &>img {
         position: absolute;
         top: 0;
         left: 0;

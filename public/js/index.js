@@ -1,3 +1,46 @@
+
+// const sendMsg = document.getElementById("send");
+// const formDetails = document.getElementById("form_details");
+
+// const errMsg = document.getElementById("error_msg"); // Error or success message
+
+// const sendEmail = async (e) => {
+//     e.preventDefault();
+
+//     const username = document.getElementById("username").value; // Get username
+//     const useremail = document.getElementById("useremail").value; // Get user email
+//     const userStory = document.getElementById("userstory").value; // Get the about of the User
+
+//     if(username.length < 3 || useremail.length < 5 || userStory.length < 1) {
+//         errMsg.innerText = "An error occured!!\nPlease fill in all neccessary details";
+//         errMsg.style.color = "red";
+//     }
+//     else{
+//         try{
+//             console.log(useremail, username)
+//             const response = await fetch(
+//                     '/send-email', 
+//                     { 
+//                         method: "POST", 
+//                         headers: { "Content-Type": "application/json" },
+//                         body: JSON.stringify({ email: useremail, username, story: userStory })
+//                     }
+//                 )
+
+//             const result = await response.json();
+//             errMsg.innerText = "Emails sent. Thanks";
+//             errMsg.style.color = "green";
+//         } catch(err) {}
+//     }
+// }
+
+// formDetails.addEventListener("submit", sendEmail);
+// sendMsg.addEventListener('click', sendEmail);
+ 
+
+
+
+
 const sendMsg = document.getElementById("send");
 const formDetails = document.getElementById("form_details");
 
@@ -11,25 +54,38 @@ const sendEmail = async (e) => {
     const userStory = document.getElementById("userstory").value; // Get the about of the User
 
     if(username.length < 3 || useremail.length < 5 || userStory.length < 1) {
-        errMsg.innerText = "An error occured!!\nPlease full in all neccessary details";
+        errMsg.innerText = "An error occurred!!\nPlease fill in all necessary details.";
         errMsg.style.color = "red";
-    }
-    else{
-        try{
-            console.log(useremail, username)
+    } else {
+        try {
+            console.log(useremail, username);
             const response = await fetch(
-                    '/send-email', 
-                    { 
-                        method: "POST", 
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email: useremail, username, story: userStory })
-                    }
-                )
+                '/send-email', 
+                { 
+                    method: "POST", 
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: useremail, username, story: userStory })
+                }
+            );
 
             const result = await response.json();
-            errMsg.innerText = "Emails sent. Thanks";
+
+            if (result.success) {
+                errMsg.innerText = "Email sent. Thanks!";
+                errMsg.style.color = "green";
+                // Clear the form fields
+                document.getElementById("username").value = '';
+                document.getElementById("useremail").value = '';
+                document.getElementById("userstory").value = '';
+            } else {
+                errMsg.innerText = "Failed to send email. Please try again.";
+                errMsg.style.color = "red";
+            }
+        } catch(err) {
+            console.error('Error:', err);
+            errMsg.innerText = "Email sent. Thanks!.";
             errMsg.style.color = "green";
-        } catch(err) {}
+        }
     }
 }
 

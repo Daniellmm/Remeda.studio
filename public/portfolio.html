@@ -102,13 +102,7 @@
                                             <li><a href="service.html">Single service</a></li>
                                         </ul> -->
                                     </li>
-                                    <li class="mil-has-children">
-                                        <a href="blog.html">Newsletter</a>
-                                        <!-- <ul>
-                                            <li><a href="blog.html">Blog List</a></li>
-                                            <li><a href="publication.html">Publication</a></li>
-                                        </ul> -->
-                                    </li>
+
                                     <li class="mil-has-children">
                                         <!-- <a href="#.">Other pages</a> -->
                                         <a href="contact.html">Contact</a>
@@ -212,8 +206,11 @@
         <!-- frame -->
         <div class="mil-frame">
             <div class="mil-frame-top">
-                <a href="/" class="mil-logo">
-                    <img src="/img/logos/4x/Artboard-6@4x.png" width="34" height="34" alt="No image" />
+                <a href="index.html" class="mil-logo">
+                    <img class="logo-image" style="mix-blend-mode: difference;"
+                        src="img/logos/Svg/Remeda-logo-icon-color.svg" width="34" height="34" />
+                    <img class="logo-image2" style="mix-blend-mode: difference;"
+                        src="img/logos/4x/Artboard-6-copy@4x.png" width="34" height="34" />
                 </a>
                 <div class="mil-menu-btn">
                     <span></span>
@@ -249,7 +246,20 @@
                                 Designing a <br />
                                 Better <span class="mil-thin">World Today</span>
                             </h1>
-                            <a href="#portfolio" class="mil-link mil-dark mil-arrow-place mil-down-arrow"></a><span>Our works</span></a>
+                            <a href="#portfolio" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
+                                <span>Our Works</span>
+                            </a>
+                            <!-- <div class="q1-text">
+                                <h6>Filter</h6>
+                            </div>
+                            <div class="filter-btn" style="display: flex; flex-wrap: wrap; padding-top: 20px; margin-right: 10px;">
+                                <div class="active q1">All</div>
+                                <div class="q1">Branding</div>
+                                <div class="q1">Modeling</div>
+                                <div class="q1">Design</div>
+                                <div class="q1">2D Art</div>
+                                <div class="q1">Web Design</div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -262,11 +272,11 @@
                         <div class="mil-lines-place mil-lines-long"></div>
 
                         <div class="row justify-content-between align-items-center">
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" data-category="branding">
                                 <a href="/bottle-project.html" class="mil-portfolio-item mil-more mil-mb-60">
                                     <div class="mil-cover-frame mil-vert mil-up">
                                         <div class="mil-cover">
-                                            <img src="/content/09.png" alt="cover" />
+                                            <img src="/content/com09.png" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -280,12 +290,12 @@
                                     </div>
                                 </a>
                             </div>
-                            
-                            <div class="col-lg-5">
+
+                            <div class="col-lg-5" data-category="design">
                                 <a href="hoodie-project.html" class="mil-portfolio-item mil-more mil-mb-60">
                                     <div class="mil-cover-frame mil-vert mil-up">
                                         <div class="mil-cover">
-                                            <img src="/content/0046.png" alt="cover" />
+                                            <img src="/content/com0046.png" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -297,9 +307,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
-                                <a href="yolo-project.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60" data-value-1="60"
-                                    data-value-2="-60">
+                            <div class="col-lg-5" data-category="design">
+                                <a href="yolo-project.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60"
+                                    data-value-1="60" data-value-2="-60">
                                     <div class="mil-cover-frame mil-hori mil-up" style="height: 500px;">
                                         <div class="mil-cover">
                                             <img src="/content/YOLO 11.png" alt="cover" />
@@ -314,11 +324,11 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" data-category="modeling">
                                 <a href="nft-project.html" class="mil-portfolio-item mil-more mil-mb-60">
                                     <div class="mil-cover-frame mil-vert mil-up">
                                         <div class="mil-cover">
-                                            <img src="./Nft2/olowoniyan-victor-jesulayomi-30016-1.jpg" alt="cover" />
+                                            <img src="./Nft2/comolowoniyan-victor-jesulayomi-30016-1.jpg" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -332,12 +342,12 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" data-category="modeling">
                                 <a href="ape-on-fire.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60"
-                                    data-value-1="60" data-value-2="-60" >
+                                    data-value-1="60" data-value-2="-60">
                                     <div class="mil-cover-frame mil-hori mil-up" style="height: 500px;">
                                         <div class="mil-cover">
-                                            <img src="./Nft1 Ape on fire/Cover.png" alt="cover" />
+                                            <img src="./Nft1 Ape on fire/comCover.png" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -349,12 +359,13 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
-                                <a href="alien-horror-apes.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60"
-                                    data-value-1="60" data-value-2="-60">
+                            <div class="col-lg-5" data-category="modeling">
+                                <a href="alien-horror-apes.html"
+                                    class="mil-portfolio-item mil-more mil-parallax mil-mb-60" data-value-1="60"
+                                    data-value-2="-60">
                                     <div class="mil-cover-frame mil-hori mil-up" style="height: 500px;">
                                         <div class="mil-cover">
-                                            <img src="./Nft3 Alien Horror Apes/Cover.jpg" alt="cover" />
+                                            <img src="./Nft3 Alien Horror Apes/comCover.jpg" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -366,12 +377,12 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" data-category="modeling">
                                 <a href="ragdoll-nft.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60"
                                     data-value-1="60" data-value-2="-60">
                                     <div class="mil-cover-frame mil-hori mil-up" style="height: 500px;">
                                         <div class="mil-cover">
-                                            <img src="./Nft5 Ragdoll NFT/Cover.jpg" alt="cover" />
+                                            <img src="./Nft5 Ragdoll NFT/comCover.jpg" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -383,12 +394,14 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
-                                <a href="outlaw-music-cover.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60"
-                                    data-value-1="60" data-value-2="-60">
+                            <div class="col-lg-5" data-category="modeling">
+                                <a href="outlaw-music-cover.html"
+                                    class="mil-portfolio-item mil-more mil-parallax mil-mb-60" data-value-1="60"
+                                    data-value-2="-60">
                                     <div class="mil-cover-frame mil-hori mil-up" style="height: 500px;">
                                         <div class="mil-cover">
-                                            <img src="./Music cover art/olowoniyan-victor-jesulayomi-0010.jpg" alt="cover" />
+                                            <img src="./Music cover art/comolowoniyan-victor-jesulayomi-0010.jpg"
+                                                alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -400,12 +413,12 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" data-category="2d art">
                                 <a href="2d-art.html" class="mil-portfolio-item mil-more mil-parallax mil-mb-60"
                                     data-value-1="60" data-value-2="-60">
                                     <div class="mil-cover-frame mil-hori mil-up" style="height: 500px;">
                                         <div class="mil-cover">
-                                            <img src="2d art/20.JPG" alt="cover" />
+                                            <img src="2d art/com20.JPG" alt="cover" />
                                         </div>
                                     </div>
                                     <div class="mil-descr">
@@ -483,9 +496,7 @@
                                                     <li class="mil-up">
                                                         <a href="contact.html">Contact</a>
                                                     </li>
-                                                    <li class="mil-up">
-                                                        <a href="blog.html">Blog</a>
-                                                    </li>
+
                                                 </ul>
                                             </nav>
                                         </div>
@@ -529,31 +540,27 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-6 mil-mb-60">
+
                                     <div class="mil-vert-between">
                                         <div class="mil-mb-30">
                                             <ul class="mil-social-icons mil-up">
-                                                <li>
-                                                    <a href="#." target="_blank" class="social-icon">
-                                                        <i class="far fa-circle"></i></a>
+                                                <li><a href="https://www.instagram.com/remeda_studio?igsh=MWJzbzhjaGMxeW1oZw=="
+                                                        target="_blank" rel="noopener noreferrer" class="social-icon">
+                                                        <i class="fa-brands fa-instagram"></i></a></li>
+                                                <li><a href="https://x.com/remedastudio?s=21" target="_blank"
+                                                        rel="noopener noreferrer" class="social-icon"> <i
+                                                            class="fa-brands fa-x-twitter"></i></a>
                                                 </li>
-                                                <li>
-                                                    <a href="#." target="_blank" class="social-icon">
-                                                        <i class="far fa-circle"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#." target="_blank" class="social-icon">
-                                                        <i class="far fa-circle"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#." target="_blank" class="social-icon">
-                                                        <i class="far fa-circle"></i></a>
-                                                </li>
+                                                <li><a href="https://www.linkedin.com/in/remeda-studio-618252334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                                                        target="_blank" rel="noopener noreferrer" class="social-icon">
+                                                        <i rel="noopener noreferrer"
+                                                            class="fa-brands fa-linkedin"></i></a></li>
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">
-                                            © Copyright 2024 - Glyte. All Rights Reserved.
-                                        </p>
+                                        <p class="mil-light-soft mil-up">© Copyright 2020 - Remedastudio. All Rights
+                                            Reserved.</p>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -702,6 +709,8 @@
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- ashley js -->
     <script src="js/main.js"></script>
+
+    <script src="js/readMore.js"></script>
 </body>
 
 </html>
