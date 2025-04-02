@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Logo image -->
     <link rel="icon" href="./img//logos//4x/Artboard-6-copy@4x.png" type="image/icon type">
 
@@ -173,7 +178,8 @@
                                             <h6 class="mil-muted mil-mb-30">Canada</h6>
 
                                             <p class="mil-light-soft mil-up">71 South Los Carneros Road, California
-                                                <span class="mil-no-wrap">+51 174 705 812</span></p>
+                                                <span class="mil-no-wrap">+51 174 705 812</span>
+                                            </p>
 
                                         </div>
                                         <div class="col-lg-4 mil-mb-60">
@@ -259,16 +265,20 @@
                 <section id="contact">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
-                        <form class="row align-items-center" id="form_details">
+                        <!-- <form class="row align-items-center" id="form_details" > -->
+                        <form class="row align-items-center" method="POST" id="form">
+                            <!-- Replace with your Access Key -->
+                            <input type="hidden" name="access_key" value="c76748c3-41b5-4aa8-95a8-fd1c22077b4b">
                             <p id="error_msg" style="text-align: center;"></p>
                             <div class="col-lg-6 mil-up">
-                                <input type="text" id="username" placeholder="What's your name">
+                                <input type="text" id="username" placeholder="What's your name" name="name" required>
                             </div>
                             <div class="col-lg-6 mil-up">
-                                <input type="email" id="useremail" placeholder="Your Email">
+                                <input type="email" id="useremail" placeholder="Your Email" name="email" required>
                             </div>
                             <div class="col-lg-12 mil-up">
-                                <textarea id="userstory" placeholder="Tell us about our project"></textarea>
+                                <textarea id="userstory" placeholder="Tell us about our project" name="message"
+                                    required></textarea>
                             </div>
                             <div class="col-lg-8">
                                 <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose
@@ -281,6 +291,8 @@
                                     </button>
                                 </div>
                             </div>
+
+                            <div id="result"></div>
                         </form>
                     </div>
                 </section>
@@ -369,13 +381,12 @@
                                         <div class="mil-mb-30">
                                             <ul class="mil-social-icons mil-up">
                                                 <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="far fa-circle"></i></a></li>
+                                                            class="fa-brands fa-instagram"></i></a></li>
                                                 <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="far fa-circle"></i></a></li>
+                                                            class="fa-brands fa-x-twitter"></i></a></li>
                                                 <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="far fa-circle"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="far fa-circle"></i></a></li>
+                                                            class="fa-brands fa-linkedin"></i></a></li>
+
                                             </ul>
                                         </div>
                                         <p class="mil-light-soft mil-up">© Copyright 2020 - Remedastudio. All Rights
@@ -532,6 +543,68 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
     <script src="js/index.js"></script>
+
+
+
+
+
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "success",
+                            title: "Message sent successfully"
+                        });
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+        });
+    </script>
+
+
 
 </body>
 

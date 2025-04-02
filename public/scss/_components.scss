@@ -10,13 +10,13 @@ preloader
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: $dark;
+     background-color: $dark;
 
     & .mil-preloader-animation {
         opacity: 0;
         position: relative;
         height: 100vh;
-        color: $light;
+         color: $light;
 
         & .mil-pos-abs {
             position: absolute;
@@ -85,7 +85,7 @@ cursor
         transform: scale(0);
 
         & svg {
-            fill: $lt-90;
+            // fill: $lt-90;
         }
     }
 
@@ -221,7 +221,8 @@ frame
             }
 
             & .logo-image {
-                color: rgb(255, 152, 0);
+                color: rgb(71, 169, 230);
+                // color: rgb(255, 152, 0);
                 mix-blend-mode: difference;
             }
 
@@ -278,7 +279,8 @@ frame
     }
 
     & .logo-image {
-        color: rgb(255, 152, 0);
+        color: rgb(71, 169, 230);
+        // color: rgb(255, 152, 0);
         mix-blend-mode: difference;
     }
 }
@@ -385,7 +387,8 @@ menu
         }
 
                  & .logo-image {
-                     color: rgb(255, 152, 0);
+                     color: rgb(71, 169, 230);
+                    //  color: rgb(255, 152, 0);
                      mix-blend-mode: difference;
                  }
 

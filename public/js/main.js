@@ -21,7 +21,7 @@ $(function () {
     const options = {
         containers: ['#swupMain', '#swupMenu'],
         animateHistoryBrowsing: true,
-        linkSelector: 'a:not([data-no-swup])',
+        // linkSelector: 'a:not([data-no-swup])',
         animationSelector: '[class="mil-main-transition"]'
     };
     const swup = new Swup(options);
@@ -38,7 +38,7 @@ $(function () {
 
     ***************************/
 
-    var accent = 'rgba(255, 152, 0, 1)';
+    var accent = 'rgba(71, 169, 230, 1)';
     var dark = '#000';
     var light = '#fff';
 
@@ -56,13 +56,13 @@ $(function () {
 
     timeline.fromTo(
         ".mil-animation-1 .mil-h3", {
-            y: "30px",
-            opacity: 0
-        }, {
-            y: "0px",
-            opacity: 1,
-            stagger: 0.4
-        },
+        y: "30px",
+        opacity: 0
+    }, {
+        y: "0px",
+        opacity: 1,
+        stagger: 0.4
+    },
     );
 
     timeline.to(".mil-animation-1 .mil-h3", {
@@ -70,6 +70,10 @@ $(function () {
         y: '-30',
     }, "+=.3");
 
+
+
+
+    
     timeline.fromTo(".mil-reveal-box", 0.1, {
         opacity: 0,
     }, {
@@ -95,7 +99,7 @@ $(function () {
     timeline.to(".mil-animation-2 .mil-h3", 0.6, {
         opacity: 0,
         y: '-30'
-    }, "+=.5");
+    }, "+=.5"); 
     timeline.to(".mil-preloader", 0.8, {
         opacity: 0,
         ease: 'sine',
@@ -120,7 +124,7 @@ $(function () {
 
     ***************************/
     $(document).on('click', 'a[href^="#"]', function (event) {
-        event.preventDefault();
+        // event.preventDefault();
 
         var target = $($.attr(this, 'href'));
         var offset = 0;
@@ -133,6 +137,21 @@ $(function () {
             scrollTop: target.offset().top - offset
         }, 400);
     });
+
+
+    document.querySelectorAll('.social-icon').forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            const link = e.target.closest('a'); // Ensure you're grabbing the correct <a> element
+            if (link) {
+                console.log('Navigating to:', link.href);
+                // Allow default navigation to proceed
+            }
+        });
+    });
+
+
+
+
     /***************************
 
     append
@@ -488,7 +507,7 @@ $(function () {
             "zoom",
             "fullScreen",
             "close"
-          ],
+        ],
         loop: false,
         protect: true
     });
@@ -925,11 +944,11 @@ $(function () {
         ***************************/
         $('[data-fancybox="gallery"]').fancybox({
             buttons: [
-            "slideShow",
-            "zoom",
-            "fullScreen",
-            "close"
-          ],
+                "slideShow",
+                "zoom",
+                "fullScreen",
+                "close"
+            ],
             loop: false,
             protect: true
         });

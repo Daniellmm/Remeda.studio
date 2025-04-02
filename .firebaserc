@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "remeda-studio-f66ff"
-  }
+    "default": "new-remeda"
+  },
+  "targets": {},
+  "etags": {}
 }
